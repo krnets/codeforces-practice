@@ -1,0 +1,37 @@
+# VS Code files
+.vscode/
+
+# Visual Studio 2019/2022 files and folders
+.vs/
+bin/
+obj/
+*.sln
+*.DotSettings.user
+incomplete/
+
+# IntelliJ IDEA
+out/
+build/
+.idea/
+.gradle/
+gradle/
+gradlew
+gradlew.bat
+
+# macOS hidden files
+.DS_STORE
+
+# C++
+*.exe
+*.obj
+*.log
+*.pdb
+Debug/
+x64/
+Release/
+*.vcxproj*
+
+# undo files
+*~
+*.bak
+
