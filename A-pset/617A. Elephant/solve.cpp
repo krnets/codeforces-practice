@@ -1,5 +1,4 @@
-#include <iostream>
-#include <sstream>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define FIO ios_base::sync_with_stdio(false); cin.tie(nullptr)
@@ -7,12 +6,10 @@ using namespace std;
 
 void solve()
 {
-	int w;
-	cin >> w;
+	int n;
+	cin >> n;
 
-	if (w > 2 && w % 2 == 0)
-		cout << "YES" << ln;
-	else cout << "NO" << ln;
+	cout << (n % 5 ? 1 : 0) + n / 5;
 }
 
 int main()

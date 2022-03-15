@@ -1,15 +1,8 @@
-#include <algorithm>
 #include <iostream>
 #include <sstream>
-#include <vector>
-
 using namespace std;
 
 #define FIO ios_base::sync_with_stdio(false); cin.tie(nullptr)
-#define ll long long
-#define ln '\n'
-#define sp ' '
-#define all(x) x.begin(), x.end()
 
 void solve()
 {

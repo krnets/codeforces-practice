@@ -4,15 +4,17 @@ using namespace std;
 
 #define FIO ios_base::sync_with_stdio(false); cin.tie(nullptr)
 #define ln '\n'
+#define sp ' '
 
 void solve()
 {
-	int w;
-	cin >> w;
+	int n;
+	cin >> n;
 
-	if (w > 2 && w % 2 == 0)
-		cout << "YES" << ln;
-	else cout << "NO" << ln;
+	if ((n - 2) % 3 == 0)
+		cout << n - 3 << sp << 2 << sp << 1;
+	else
+		cout << n - 2 << sp << 1 << sp << 1;
 }
 
 int main()

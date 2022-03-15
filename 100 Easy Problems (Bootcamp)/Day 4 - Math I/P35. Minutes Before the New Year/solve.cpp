@@ -7,17 +7,21 @@ using namespace std;
 
 void solve()
 {
-	int w;
-	cin >> w;
+	int h, m;
+	cin >> h >> m;
 
-	if (w > 2 && w % 2 == 0)
-		cout << "YES" << ln;
-	else cout << "NO" << ln;
+	int ans = (24 - h) * 60 - m;
+
+	cout << ans << ln;
 }
 
 int main()
 {
 	FIO;
-	solve();
+	int t;
+	cin >> t;
+
+	while (t--)
+		solve();
 	return 0;
 }
