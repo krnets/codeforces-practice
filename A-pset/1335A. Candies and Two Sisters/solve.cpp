@@ -6,24 +6,26 @@ using namespace std;
 #define ln '\n'
 #define sp ' '
 
-void solve()
+int solve(int n)
 {
-	int n, k;
-	cin >> n >>k;
+	if (n <= 2)
+		return 0;
 
-	while(k--)
-	{
-		if (n % 10 == 0)
-			n /= 10;
-		else --n;
-	}
-
-	cout << n;
+	return n / 2 - (n & 1 ? 0 : 1);
 }
 
 int main()
 {
 	FIO;
-	solve();
+	int t;
+	cin >> t;
+
+	while (t--)
+	{
+		int n;
+		cin >> n;
+		cout << solve(n) << ln;
+	}
+
 	return 0;
 }

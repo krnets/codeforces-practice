@@ -8,17 +8,15 @@ using namespace std;
 
 void solve()
 {
-	int n, k;
-	cin >> n >>k;
+	string s;
+	getline(cin, s);
+	set<char> set;
 
-	while(k--)
-	{
-		if (n % 10 == 0)
-			n /= 10;
-		else --n;
-	}
+	for (char c : s)
+		if (isalpha(c))
+			set.insert(c);
 
-	cout << n;
+	cout << set.size();
 }
 
 int main()

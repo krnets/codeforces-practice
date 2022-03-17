@@ -10,22 +10,24 @@ void solve()
 {
 	int n;
 	cin >> n;
+	int total = 0;
 
-	string ans = "EASY";
+	map<string, int> faces_map{
+		{"Tetrahedron", 4},
+		{"Cube", 6},
+		{"Octahedron", 8},
+		{"Dodecahedron", 12},
+		{"Icosahedron", 20}
+	};
 
 	while (n--)
 	{
-		int x;
-		cin >> x;
-
-		if (x == 1)
-		{
-			ans = "HARD";
-			break;
-		}
+		string polyhedron;
+		cin >> polyhedron;
+		total += faces_map[polyhedron];
 	}
 
-	cout << ans;
+	cout << total;
 }
 
 int main()

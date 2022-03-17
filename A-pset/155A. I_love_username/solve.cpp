@@ -8,23 +8,28 @@ using namespace std;
 
 void solve()
 {
-	int n;
-	cin >> n;
+	int n, first, low, high;
+	cin >> n >> first;
+	low = first;
+	high = first;
+	int ans = 0;
 
-	string ans = "EASY";
-
-	while (n--)
+	while (--n)
 	{
-		int x;
-		cin >> x;
+		int score;
+		cin >> score;
 
-		if (x == 1)
+		if (score > high)
 		{
-			ans = "HARD";
-			break;
+			++ans;
+			high = score;
+		}
+		else if (score < low)
+		{
+			++ans;
+			low = score;
 		}
 	}
-
 	cout << ans;
 }
 

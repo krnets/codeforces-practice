@@ -5,27 +5,18 @@ using namespace std;
 #define ll long long
 #define ln '\n'
 #define sp ' '
+#define all(x) x.begin(), x.end()
 
 void solve()
 {
-	int n;
-	cin >> n;
+	string r;
+	getline(cin, r);
+	int n = stoi(r);
 	string s;
-	cin >> s;
-
-	vector<int> vec;
-	char last = s.front();
-	vec.push_back(last);
-
-	for (char c : s)
-	{
-		if (c != last)
-			vec.push_back(c);
-
-		last = c;
-	}
-
-	cout << n - vec.size();
+	getline(cin, s);
+	transform(all(s), s.begin(), [](char c) { return tolower(c); });
+	set<char> set(all(s));
+	cout << (set.size() == 26 ? "YES" : "NO");
 }
 
 int main()

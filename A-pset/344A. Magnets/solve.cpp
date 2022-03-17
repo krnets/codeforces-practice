@@ -5,7 +5,6 @@ using namespace std;
 #define ll long long
 #define ln '\n'
 #define sp ' '
-#define all(x) x.begin(), x.end()
 
 void solve()
 {

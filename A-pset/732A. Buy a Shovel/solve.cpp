@@ -8,25 +8,19 @@ using namespace std;
 
 void solve()
 {
-	int year;
-	cin >> year;
-	set<int> set;
+	int shovel_price, coin_denomination;
+	cin >> shovel_price >> coin_denomination;
 
-	while (set.size() != 4)
+	for (int i = 1; i < 10; ++i)
 	{
-		++year;
-		set.clear();
+		int change = (shovel_price * i) % 10;
 
-		int temp = year;
-
-		while (temp > 0)
+		if (change == 0 || change == coin_denomination)
 		{
-			set.insert(temp % 10);
-			temp /= 10;
+			cout << i;
+			return;
 		}
 	}
-
-	cout << year;
 }
 
 int main()

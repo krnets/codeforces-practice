@@ -10,21 +10,20 @@ void solve()
 {
 	int n;
 	cin >> n;
+	vector<int> host(n);
+	vector<int> guest(n);
+	int ans = 0;
 
-	string ans = "EASY";
-
-	while (n--)
+	for (int i = 0; i < n; ++i)
 	{
-		int x;
-		cin >> x;
+		cin >> host[i] >> guest[i];
 
-		if (x == 1)
+		for (int j = 0; j < i; ++j)
 		{
-			ans = "HARD";
-			break;
+			if (host[i] == guest[j]) ++ans;
+			if (host[j] == guest[i]) ++ans;
 		}
 	}
-
 	cout << ans;
 }
 

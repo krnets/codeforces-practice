@@ -8,17 +8,14 @@ using namespace std;
 
 void solve()
 {
-	int n, k;
-	cin >> n >>k;
+	string guest, host, pile;
+	cin >> guest >> host >> pile;
 
-	while(k--)
-	{
-		if (n % 10 == 0)
-			n /= 10;
-		else --n;
-	}
+	guest += host;
+	ranges::sort(guest);
+	ranges::sort(pile);
 
-	cout << n;
+	cout << (guest == pile ? "YES" : "NO");
 }
 
 int main()

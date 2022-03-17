@@ -8,17 +8,16 @@ using namespace std;
 
 void solve()
 {
-	int n, k;
-	cin >> n >>k;
+	string s, t, ans;
+	cin >> s >> t;
 
-	while(k--)
-	{
-		if (n % 10 == 0)
-			n /= 10;
-		else --n;
-	}
+	for (int i = 0; i < s.length(); ++i)
+		if (s[i] != t[i])
+			ans.push_back('1');
+		else
+			ans.push_back('0');
 
-	cout << n;
+	cout << ans;
 }
 
 int main()

@@ -6,24 +6,29 @@ using namespace std;
 #define ln '\n'
 #define sp ' '
 
-void solve()
+ll minMoves(ll a, ll b)
 {
-	int n, k;
-	cin >> n >>k;
+	if (a % b == 0)
+		return 0;
 
-	while(k--)
-	{
-		if (n % 10 == 0)
-			n /= 10;
-		else --n;
-	}
+	if (a < b)
+		return b - a;
 
-	cout << n;
+	return b - (a % b);
 }
 
 int main()
 {
 	FIO;
-	solve();
+	int t;
+	cin >> t;
+
+	while (t--)
+	{
+		ll a, b;
+		cin >> a >> b;
+		cout << minMoves(a, b) << ln;
+	}
+
 	return 0;
 }

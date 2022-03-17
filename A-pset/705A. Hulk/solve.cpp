@@ -8,17 +8,19 @@ using namespace std;
 
 void solve()
 {
-	int n, k;
-	cin >> n >>k;
+	int n;
+	cin >> n;
+	cout << "I hate";
 
-	while(k--)
+	for (int i = 1; i < n; ++i)
 	{
-		if (n % 10 == 0)
-			n /= 10;
-		else --n;
+		if (i % 2 == 0)
+			cout << " that I hate";
+		else
+			cout << " that I love";
 	}
 
-	cout << n;
+	cout << " it";
 }
 
 int main()

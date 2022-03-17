@@ -8,17 +8,13 @@ using namespace std;
 
 void solve()
 {
-	int n, k;
-	cin >> n >>k;
+	int red, blue;
+	cin >> red >> blue;
 
-	while(k--)
-	{
-		if (n % 10 == 0)
-			n /= 10;
-		else --n;
-	}
+	int different = min(red, blue);
+	int same = (max(red, blue) - different) / 2;
 
-	cout << n;
+	cout << different << sp << same;
 }
 
 int main()

@@ -8,25 +8,21 @@ using namespace std;
 
 void solve()
 {
-	int year;
-	cin >> year;
-	set<int> set;
+	vector<int> denominations{100, 20, 10, 5, 1};
+	int n;
+	cin >> n;
+	int ans = 0;
 
-	while (set.size() != 4)
+	for (int denomination : denominations)
 	{
-		++year;
-		set.clear();
-
-		int temp = year;
-
-		while (temp > 0)
+		if (n >= denomination)
 		{
-			set.insert(temp % 10);
-			temp /= 10;
+			int x = n / denomination;
+			ans += x;
+			n = n - (x * denomination);
 		}
 	}
-
-	cout << year;
+	cout << ans;
 }
 
 int main()
