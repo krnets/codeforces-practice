@@ -8,27 +8,26 @@ using namespace std;
 
 void solve()
 {
-	int n;
 	string s;
-	cin >> n >> s;
-	int ans = 0;
-	int x_count = 0;
+	cin >> s;
+	int n = s.length();
+	vector<int> dp(n);
 
-	for (char c : s)
+	int q_count = 0;
+
+	for (int i = 0; i < n; i++)
 	{
-		if (c == 'x')
-		{
-			++x_count;
+		if (s[i] == 'Q')
+			++q_count;
 
-			if (x_count >= 3)
-			{
-				++ans;
-			}
-		}
-		else
-		{
-			x_count = 0;
-		}
+		dp[i] = q_count;
+	}
+	int ans = 0;
+
+	for (int i = 0; i < n; i++)
+	{
+		if (s[i] == 'A')
+			ans += dp[i] * (dp[n - 1] - dp[i]);
 	}
 
 	cout << ans;

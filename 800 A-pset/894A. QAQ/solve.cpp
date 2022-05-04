@@ -8,26 +8,22 @@ using namespace std;
 
 void solve()
 {
-	int n;
 	string s;
-	cin >> n >> s;
+	cin >> s;
+	const string word = "QAQ";
 	int ans = 0;
-	int x_count = 0;
+	int n = s.length();
 
-	for (char c : s)
+	for (int i = 0; i < n; i++)
 	{
-		if (c == 'x')
+		for (int j = i + 1; j < n; j++)
 		{
-			++x_count;
-
-			if (x_count >= 3)
+			for (int k = j + 1; k < n; k++)
 			{
-				++ans;
+				if (s[i] == 'Q' && s[j] == 'A' && s[k] == 'Q')
+					++ans;
+
 			}
-		}
-		else
-		{
-			x_count = 0;
 		}
 	}
 

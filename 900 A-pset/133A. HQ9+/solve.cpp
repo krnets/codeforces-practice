@@ -8,30 +8,19 @@ using namespace std;
 
 void solve()
 {
-	int n;
-	string s;
-	cin >> n >> s;
-	int ans = 0;
-	int x_count = 0;
+	string p;
+	cin >> p;
+	set<char> set{ 'H','Q','9' };
+	bool will_produce_output = false;
 
-	for (char c : s)
-	{
-		if (c == 'x')
+	for (char c : p)
+		if (set.contains(c))
 		{
-			++x_count;
-
-			if (x_count >= 3)
-			{
-				++ans;
-			}
+			will_produce_output = true;
+			break;
 		}
-		else
-		{
-			x_count = 0;
-		}
-	}
 
-	cout << ans;
+	cout << (will_produce_output ? "YES" : "NO");
 }
 
 int main()
